@@ -41,3 +41,8 @@ $env:DISCORD_WEBHOOK_URL="your_discord_webhook_url"
 4. run the script
 ```
 python3 main.py```
+
+The script will now check every 24 hours if any new repositories have been deleted within a day of their creation, and if so, it will send a notification to the specified Discord channel.
+
+## Note
+The script requires the GITHUB_TOKEN and DISCORD_WEBHOOK_URL environment variables to be set every time a new terminal session is started. To avoid this, you can set these environment variables in your system's environment settings.
