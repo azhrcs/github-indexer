@@ -1,0 +1,1 @@
+Cloned repos are put here. I did'nt know whether or not the script would create this directory for the user so I put it here manually.
