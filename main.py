@@ -1,7 +1,7 @@
 import os
 import time
-import requests
-from datetime import datetime, timedelta
+import requests # pip install requests
+from datetime import datetime, timedelta # pip install datetime
 
 YOUR_DISCORD_WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 TARGET_USERNAME = os.getenv("TARGET_USERNAME")
@@ -22,7 +22,7 @@ def less_than_a_day_old(timestamp):
     return datetime.now() - created_at < timedelta(days=1)
 
 def notify_discord(deleted_repos):
-    url = YOUR_DISCORD_WEBHOOK_URL  # replace with your Discord webhook URL
+    url = YOUR_DISCORD_WEBHOOK_URL
 
     for repo, timestamp in deleted_repos.items():
         data = {
@@ -36,7 +36,7 @@ def notify_discord(deleted_repos):
             print(f'Failed to send notification to Discord, status code: {result.status_code}')
 
 def main():
-    user = TARGET_USERNAME  # change this to the target GitHub username
+    user = TARGET_USERNAME
     previous_repositories = get_repositories(user)
 
     while True:
